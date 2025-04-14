@@ -4,7 +4,7 @@ export const NavLinks = [
       to: "/"
     },
     {
-      name: "Science",
+      name: "Business",
       to: "/science"
     },
     {
@@ -12,8 +12,8 @@ export const NavLinks = [
       to: "/economy"
     },
     {
-      name: "Europe",
-      to: "/europe"
+      name: "Lite",
+      to: "/lite"
     },
     {
       name: "Features",

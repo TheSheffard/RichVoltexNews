@@ -7,9 +7,9 @@ export const Footer = () => {
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3  text-center gap-8">
                 {/* Logo and Description */}
                 <div>
-                    <h2 className="text-2xl font-bold">RICH VOLTEX</h2>
+                    <h2 className="text-2xl font-bold">Punch 9ja</h2>
                     <p className="mt-2 text-gray-400">
-                        At Rich Voltex we gathers, investigates, and presents news and current events through various media platforms.
+                        At Punch 9ja we gathers, investigates, and presents news and current events through various media platforms.
                     </p>
                   
                 </div>
@@ -40,9 +40,9 @@ export const Footer = () => {
             </div>
 
             {/* Copyright Section */}
-            <div className="text-center mt-8 border-t border-gray-700 pt-4 text-gray-400 text-sm">
-                <p>Developed By by <a href="#" className="text-white">Rich dot com</a></p>
-                <p>Copyright © {new Date().getFullYear()} Rich Voltex. All rights reserved.</p>
+            <div className="text-center mt-8 border-t gap-2 flex flex-col border-gray-700 pt-4 text-gray-400 text-sm">
+                <p>Developed By by <span className="text-white">Rich dot com</span></p>
+                <p>Copyright © {new Date().getFullYear()} Punch 9ja. All rights reserved.</p>
             </div>
         </footer>
     );

@@ -8,17 +8,15 @@ import { BsArrowRight } from "react-icons/bs";
 type NewsTypes = {
     _id: string;
     categoryId: string;
+    categoryName: string;
     title: string;
-    link: string;
-    desc: string;
     image: string;
-    secImage: string;
     date: string;
     content: string;
     createdAt: string;
     updatedAt: string;
     __v: number;
-};
+  };
 
 export const EconomyNewsGrid = () => {
     const [economyNews, setEconomyNews] = useState<NewsTypes[]>([]);
@@ -50,7 +48,7 @@ export const EconomyNewsGrid = () => {
                         </div>
                         <div className="flex group-hover:text-red-500 duration-300 justify-center flex-col gap-4">
                             <p className="font-semibold text-lg">{news?.title}</p>
-                            <p>{news?.desc}</p>
+                            <p>{news?.title}</p>
                             <p>{news?.date}</p>
                         </div>
                     </div>

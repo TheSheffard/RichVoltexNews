@@ -29,7 +29,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route path='/sport' element={<SportPage />} />
           <Route path='/science' element={<SciencePage />} />
           <Route path='/economy' element={<EconomyPage />} />
-          <Route path='/europe' element={<EuropePage />} />
+          <Route path='/lite' element={<EuropePage />} />
           <Route path='/war' element={<WarPage />} />
           <Route path='/features' element={<FeaturesPage />} />
           <Route path="/news/:id" element={<NewsDetails />} />
