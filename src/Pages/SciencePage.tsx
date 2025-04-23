@@ -1,4 +1,4 @@
-import { ScienceComp } from "../Components/ScienceComp/Science"
+import { ScienceComp } from "../Components/PoliticesCOmp/Science"
 
 export const SciencePage = () => {
   return (

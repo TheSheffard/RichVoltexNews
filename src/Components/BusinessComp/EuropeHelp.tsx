@@ -26,10 +26,10 @@ export const EuropeNewsGrid = () => {
     const fetchNews = async () => {
       try {
         const response = await fetch(
-          "https://richapi.vercel.app/post/f7ca96e7-958a-41b9-ad21-ad70w4ceawegas"
+          "https://richapi.vercel.app/post-category/Business"
         );
         const data = await response.json();
-        setEuropeNews(data);
+        setEuropeNews(data.posts);
       } catch (error) {
         console.error("Error fetching Lite news:", error);
       }

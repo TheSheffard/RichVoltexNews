@@ -1,23 +1,28 @@
 export const NavLinks = [
     {
-      name: "General",
+      name: "News",
       to: "/"
+    },
+
+    {
+      name: "General",
+      to: "/general"
     },
     {
       name: "Business",
-      to: "/science"
+      to: "/business"
     },
     {
       name: "Economy",
       to: "/economy"
     },
+    // {
+    //   name: "Lite",
+    //   to: "/lite"
+    // },
     {
-      name: "Lite",
-      to: "/lite"
-    },
-    {
-      name: "Features",
-      to: "/features"
+      name: "Polities",
+      to: "/polities"
     },
    
     {

@@ -1,4 +1,4 @@
-import { EuropeComp } from '../Components/EuropeComp/EuropeComp'
+import { EuropeComp } from '../Components/BusinessComp/BusinessComp'
 
 export const EuropePage = () => {
   return (

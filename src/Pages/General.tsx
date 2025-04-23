@@ -1,10 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { NavLinks } from "../NavComp/NavFucn";
 import { BsArrowRight } from "react-icons/bs";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useNavigate } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
+import { NavLinks } from "../Components/NavComp/NavFucn";
 
 type NewsTypes = {
   _id: string;
@@ -19,7 +19,7 @@ type NewsTypes = {
   __v: number;
 };
 
-export const ScienceNewsGrid = () => {
+export const GeneralPage = () => {
   const [scienceNews, setScienceNews] = useState<NewsTypes[]>([]);
   const [loading, setLoading] = useState(true);
   const location = useLocation().pathname;
@@ -29,10 +29,10 @@ export const ScienceNewsGrid = () => {
     const fetchNews = async () => {
       try {
         const response = await fetch(
-          "https://richapi.vercel.app/post/f7ca96e7-958a-41b9-ad21-ad7059396286"
+          "https://richapi.vercel.app/post-category/HomePage"
         );
         const data = await response.json();
-        setScienceNews(data);
+        setScienceNews(data.posts);
       } catch (error) {
         console.error("Error fetching science news:", error);
       } finally {
@@ -77,7 +77,7 @@ export const ScienceNewsGrid = () => {
                 key={index}
                 className="flex flex-col md:flex-row cursor-pointer group gap-2"
               >
-                <div className="w-full h-[250px] md:h-[300px] rounded-md overflow-hidden bg-orange-400">
+                <div className="w-full h-[250px] md:h-[350px] rounded-md overflow-hidden bg-orange-400">
                   <img
                     src={news?.image}
                     alt={news.title}
@@ -128,7 +128,7 @@ export const ScienceNewsGrid = () => {
 
 const Ads = () => {
   return (
-    <div className="h-[30%] w-full bg-lime-500">
+    <div className="h-[40px] w-full bg-lime-500">
       <p className="font-semibold justify-center flex items-center">
         Ads Banner
       </p>

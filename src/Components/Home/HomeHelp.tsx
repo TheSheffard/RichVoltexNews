@@ -33,9 +33,9 @@ export const HomeHero = () => {
   useEffect(() => {
     const fetchTodayNews = async () => {
       try {
-        const response = await fetch("https://richapi.vercel.app/all-post");
+        const response = await fetch("https://richapi.vercel.app/post-category/HomePage");
         const data = await response.json();
-        setNews(data);
+        setNews(data.posts);
       } catch (error: any) {
         console.error("Error fetching news:", error.message);
       }
@@ -93,9 +93,9 @@ export const TopNews = () => {
   useEffect(() => {
     const fetchTodayNews = async () => {
       try {
-        const response = await fetch("https://richapi.vercel.app/all-post");
+        const response = await fetch("https://richapi.vercel.app/post-category/News");
         const data = await response.json();
-        setNews(data);
+        setNews(data.posts);
       } catch (error: any) {
         console.error("Error fetching news:", error.message);
       }
@@ -191,22 +191,22 @@ export const ThirdSection = () => {
       try {
         const response = await fetch(url);
         const data = await response.json();
-        setter(data);
+        setter(data.posts);
       } catch (error) {
         console.error("Error fetching news:", error);
       }
     };
 
     fetchNews(
-      "https://richapi.vercel.app/post/f7ca96e7-958a-41b9-ad21-ad70w4534346",
+      "https://richapi.vercel.app/post-category/Sports",
       setSportsNews
     );
     fetchNews(
-      "https://richapi.vercel.app/post/2ab36b15-fdf4-4a88-b05f-b6d96c71cabf",
+      "https://richapi.vercel.app/post-category/HomePage",
       setGeneralNews
     );
     fetchNews(
-      "https://richapi.vercel.app/post/f7ca96e7-958a-41b9-ad21-ad7059588290",
+      "https://richapi.vercel.app/post-category/Featured",
       setTechNews
     );
   }, []);
@@ -253,7 +253,7 @@ export const ThirdSection = () => {
 
           <div className="mt-5 flex flex-col gap-4">
             {Array.isArray(sportsNews) &&
-              sportsNews.slice(2, 6).map((item: any, index: number) => (
+              sportsNews.slice(2, 9).map((item: any, index: number) => (
                 <div
                   onClick={() => navigate(`/news/${item._id}`)}
                   key={index}
@@ -286,7 +286,7 @@ export const ThirdSection = () => {
           </div>
         </div>
       </div>
-      {/* Politics */}
+      {/* News   */}
 
       <div className="">
         <p className="text-2xl font-semibold my-4">General</p>
@@ -296,14 +296,14 @@ export const ThirdSection = () => {
               className="cursor-pointer rounded-lg overflow-hidden h-full w-full"
               onClick={() =>
                 generalNews.length > 0 &&
-                navigate(`/news/${generalNews[0]._id}`)
+                navigate(`/news/${generalNews[1]._id}`)
               }
             >
               {generalNews.length > 0 ? (
                 <img
-                  src={generalNews[0].image}
+                  src={generalNews[1].image}
                   className="h-full group-hover:scale-105 duration-500 w-full object-cover"
-                  alt={generalNews[0].title}
+                  alt={generalNews[1].title}
                 />
               ) : (
                 <Skeleton className="w-full  h-full" />
@@ -312,14 +312,14 @@ export const ThirdSection = () => {
 
             <p className="mt-2 text-sm font-semibold">
               {generalNews.length > 0 ? (
-                generalNews[0]?.date
+                generalNews[1]?.date
               ) : (
                 <Skeleton className="w-fit h-full" />
               )}
             </p>
             <p className="group-hover:text-red-500 duration-300 font-semibold">
               {generalNews.length > 0 ? (
-                generalNews[0]?.title
+                generalNews[1]?.title
               ) : (
                 <Skeleton className="w-full h-full" />
               )}
@@ -328,7 +328,7 @@ export const ThirdSection = () => {
 
           <div className="mt-5 flex flex-col gap-4">
             {Array.isArray(generalNews) &&
-              generalNews.slice(2, 6).map((item: any, index: number) => (
+              generalNews.slice(2, 9).map((item: any, index: number) => (
                 <div
                   key={index}
                   onClick={() => navigate(`/news/${item._id}`)}
@@ -401,7 +401,7 @@ export const ThirdSection = () => {
 
           <div className="mt-5 flex flex-col gap-4">
             {Array.isArray(techNews) &&
-              techNews.slice(1, 4).map((item: any, index: number) => (
+              techNews.slice(1, 8).map((item: any, index: number) => (
                 <div
                   key={index}
                   onClick={() => navigate(`/news/${item._id}`)}
@@ -423,7 +423,7 @@ export const ThirdSection = () => {
             <div className="justify-end flex group h-fit">
               <Link
                 className=" w-fit flex  text-sm font-semibold items-center gap-2"
-                to={"/science"}
+                to={"/polities"}
               >
                 Go to Feature{" "}
                 <i className="border group-hover:translate-x-1 duration-200 group-hover:bg-lime-300 group-hover:text-black p-1 rounded-full bg-black text-white">
@@ -721,7 +721,7 @@ export const LastSection = () => {
             <div className="justify-end flex group h-fit">
               <Link
                 className=" w-fit flex  text-sm font-semibold items-center gap-2"
-                to={"/lite"}
+                to={"/business"}
               >
                 Go to Business{" "}
                 <i className="border group-hover:translate-x-1 duration-200 group-hover:bg-red-500 group-hover:text-black p-1 rounded-full bg-black text-white">
@@ -823,7 +823,9 @@ export const LastSection = () => {
 export const Footer = () => {
   return (
     <div className="grid grid-cols-3 gap-5 md:grid-cols-10 bg-black text-white p-5">
-      <div></div>
+      <div>
+        
+      </div>
     </div>
   );
 };

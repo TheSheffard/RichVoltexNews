@@ -6,9 +6,8 @@ import { HomePage } from './Pages/HomePage'
 import { SportPage } from './Pages/SportPage'
 import { SciencePage } from './Pages/SciencePage'
 import { EconomyPage } from './Pages/EconomyPage'
-import { EuropePage } from './Pages/EuropePage'
-import { WarPage } from './Pages/WarPage'
-import { FeaturesPage } from './Pages/FeaturesPage'
+import { EuropePage } from './Pages/BusinessPage'
+import { FeaturesPage } from './Pages/PoliticsPage'
 import { Navbar } from './Components/NavComp/NavComp'
 import { NewsDetails } from './Pages/DisplayNews'
 import { Footer } from './Pages/Footer'
@@ -16,6 +15,7 @@ import { Disclaimer } from './Pages/Disclaimer'
 import { TermsOfUse } from './Pages/TermsOfUse'
 import { PrivacyPolicy } from './Pages/Privacy'
 import { ContactUs } from './Pages/ContactUs'
+import { GeneralPage } from './Pages/General'
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -27,10 +27,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/sport' element={<SportPage />} />
-          <Route path='/science' element={<SciencePage />} />
+          <Route path='/polities' element={<SciencePage />} />
           <Route path='/economy' element={<EconomyPage />} />
-          <Route path='/lite' element={<EuropePage />} />
-          <Route path='/war' element={<WarPage />} />
+          <Route path='/business' element={<EuropePage />} />
+          <Route path='/general' element={<GeneralPage />} />
           <Route path='/features' element={<FeaturesPage />} />
           <Route path="/news/:id" element={<NewsDetails />} />
           <Route path="/disclaimer" element={<Disclaimer />} />
