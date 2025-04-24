@@ -33,7 +33,9 @@ export const HomeHero = () => {
   useEffect(() => {
     const fetchTodayNews = async () => {
       try {
-        const response = await fetch("https://richapi.vercel.app/post-category/HomePage");
+        const response = await fetch(
+          "https://richapi.vercel.app/post-category/HomePage"
+        );
         const data = await response.json();
         setNews(data.posts);
       } catch (error: any) {
@@ -93,7 +95,9 @@ export const TopNews = () => {
   useEffect(() => {
     const fetchTodayNews = async () => {
       try {
-        const response = await fetch("https://richapi.vercel.app/post-category/News");
+        const response = await fetch(
+          "https://richapi.vercel.app/post-category/News"
+        );
         const data = await response.json();
         setNews(data.posts);
       } catch (error: any) {
@@ -197,18 +201,12 @@ export const ThirdSection = () => {
       }
     };
 
-    fetchNews(
-      "https://richapi.vercel.app/post-category/Sports",
-      setSportsNews
-    );
+    fetchNews("https://richapi.vercel.app/post-category/Sports", setSportsNews);
     fetchNews(
       "https://richapi.vercel.app/post-category/HomePage",
       setGeneralNews
     );
-    fetchNews(
-      "https://richapi.vercel.app/post-category/Featured",
-      setTechNews
-    );
+    fetchNews("https://richapi.vercel.app/post-category/Featured", setTechNews);
   }, []);
 
   return (
@@ -460,14 +458,14 @@ export const EditorsChoice = () => {
   }, []);
 
   return (
-    <div className="md:h-screen w-full my-5  gap-4 mx-auto grid grid-cols-1 md:grid-cols-2">
+    <div className=" w-full my-5  gap-4 mx-auto grid grid-cols-1 md:grid-cols-2">
       <div
-        className=" flex  flex-col group cursor-pointer p-4 gap-4"
+        className=" flex h-full  flex-col group cursor-pointer p-4 gap-4"
         onClick={() =>
           warNews.length > 0 && navigate(`/news/${warNews[0]._id}`)
         }
       >
-        <div className="flex-1  bg-blue-600 rounded-md overflow-hidden">
+        <div className="flex-1 max-h-[500px]  bg-blue-600 rounded-md overflow-hidden">
           {warNews.length > 0 ? (
             <img
               src={warNews[0]?.image}
@@ -610,7 +608,7 @@ export const LastSection = () => {
 
           <div className="mt-5 flex flex-col gap-4">
             {Array.isArray(economyNews) &&
-              economyNews.slice(1, 4).map((item: any, index: number) => (
+              economyNews.slice(1, 7).map((item: any, index: number) => (
                 <div
                   onClick={() => navigate(`/news/${item._id}`)}
                   key={index}
@@ -692,7 +690,7 @@ export const LastSection = () => {
 
           <div className="mt-5 flex flex-col gap-4">
             {Array.isArray(europeNews) &&
-              europeNews.slice(1, 4).map((item: any, index: number) => (
+              europeNews.slice(1, 7).map((item: any, index: number) => (
                 <div
                   key={index}
                   onClick={() => navigate(`/news/${item._id}`)}
@@ -774,7 +772,7 @@ export const LastSection = () => {
 
           <div className="mt-5 flex flex-col gap-4">
             {Array.isArray(featuresNews) &&
-              featuresNews.slice(1, 4).map((item: any, index: number) => (
+              featuresNews.slice(1, 7).map((item: any, index: number) => (
                 <div
                   key={index}
                   onClick={() => navigate(`/news/${item._id}`)}
@@ -823,9 +821,7 @@ export const LastSection = () => {
 export const Footer = () => {
   return (
     <div className="grid grid-cols-3 gap-5 md:grid-cols-10 bg-black text-white p-5">
-      <div>
-        
-      </div>
+      <div></div>
     </div>
   );
 };

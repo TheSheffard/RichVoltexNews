@@ -5,17 +5,17 @@ import { NavLinks } from "../NavComp/NavFucn";
 
 // Define NewsTypes for better type safety
 type NewsTypes = {
-    _id: string;
-    categoryId: string;
-    categoryName: string;
-    title: string;
-    image: string;
-    date: string;
-    content: string;
-    createdAt: string;
-    updatedAt: string;
-    __v: number;
-  };
+  _id: string;
+  categoryId: string;
+  categoryName: string;
+  title: string;
+  image: string;
+  date: string;
+  content: string;
+  createdAt: string;
+  updatedAt: string;
+  __v: number;
+};
 
 export const FeaturesNewsGrid = () => {
   const [news, setNews] = useState<NewsTypes[]>([]);
@@ -52,14 +52,14 @@ export const FeaturesNewsGrid = () => {
             key={item._id}
             className="flex flex-col md:flex-row cursor-pointer group gap-2"
           >
-            <div className="w-full h-[250px] md:h-[300px] rounded-md overflow-hidden bg-gray-200">
+            <div className="w-full flex-1 h-[250px] md:h-[300px] rounded-md overflow-hidden bg-gray-200">
               <img
                 src={item?.image}
                 alt={item?.title}
                 className="w-full group-hover:scale-105 duration-500 h-full object-cover"
               />
             </div>
-            <div className="flex group-hover:text-red-500 duration-300 justify-center flex-col gap-4">
+            <div className="flex flex-1 group-hover:text-red-500 duration-300 justify-center flex-col gap-4">
               <p className="font-semibold text-lg">{item?.title}</p>
               <p>{item?.title}</p>
               <p>{item?.date}</p>

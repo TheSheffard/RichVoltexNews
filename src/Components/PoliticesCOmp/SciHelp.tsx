@@ -77,14 +77,14 @@ export const ScienceNewsGrid = () => {
                 key={index}
                 className="flex flex-col md:flex-row cursor-pointer group gap-2"
               >
-                <div className="w-full h-[250px] md:h-[300px] rounded-md overflow-hidden bg-orange-400">
+                <div className="w-full flex-1 h-[250px] md:h-[300px] rounded-md overflow-hidden bg-orange-400">
                   <img
                     src={news?.image}
                     alt={news.title}
                     className="w-full group-hover:scale-105 duration-500 h-full object-cover"
                   />
                 </div>
-                <div className="flex group-hover:text-red-500 duration-300 justify-center flex-col gap-4">
+                <div className="flex flex-1 group-hover:text-red-500 duration-300 justify-center flex-col gap-4">
                   <p className="font-semibold text-lg">{news?.title}</p>
                   <p>{news?.title}</p>
                   <p>{news?.date}</p>

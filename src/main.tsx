@@ -16,32 +16,31 @@ import { TermsOfUse } from './Pages/TermsOfUse'
 import { PrivacyPolicy } from './Pages/Privacy'
 import { ContactUs } from './Pages/ContactUs'
 import { GeneralPage } from './Pages/General'
+import { ScrollToTop } from './Components/ScrollToTop'
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
-      <Navbar />
-
-      <div className='mt-20'>
-        <Routes>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/sport' element={<SportPage />} />
-          <Route path='/polities' element={<SciencePage />} />
-          <Route path='/economy' element={<EconomyPage />} />
-          <Route path='/business' element={<EuropePage />} />
-          <Route path='/general' element={<GeneralPage />} />
-          <Route path='/features' element={<FeaturesPage />} />
-          <Route path="/news/:id" element={<NewsDetails />} />
-          <Route path="/disclaimer" element={<Disclaimer />} />
-          <Route path="/terms" element={<TermsOfUse />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/contact" element={<ContactUs />} />
-
-
-        </Routes>
-      </div>
-      <Footer />
-    </BrowserRouter>
-  </StrictMode>,
+  <BrowserRouter>
+    <Navbar />
+    <div className='mt-20'>
+      <ScrollToTop />  {/* Add this line */}
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/sport' element={<SportPage />} />
+        <Route path='/polities' element={<SciencePage />} />
+        <Route path='/economy' element={<EconomyPage />} />
+        <Route path='/business' element={<EuropePage />} />
+        <Route path='/general' element={<GeneralPage />} />
+        <Route path='/features' element={<FeaturesPage />} />
+        <Route path="/news/:id" element={<NewsDetails />} />
+        <Route path="/disclaimer" element={<Disclaimer />} />
+        <Route path="/terms" element={<TermsOfUse />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/contact" element={<ContactUs />} />
+      </Routes>
+    </div>
+    <Footer />
+  </BrowserRouter>
+</StrictMode>,
 )

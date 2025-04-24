@@ -39,23 +39,23 @@ export const EuropeNewsGrid = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-1 gap-3 md:gap-10 sm:grid-cols-[1fr_300px]">
+    <div className="grid grid-cols-1  gap-3 md:gap-10 sm:grid-cols-[1fr_300px]">
       {/* News List Section */}
-      <div className="grid grid-cols-1 gap-10 px-4 sm:px-2">
+      <div className="grid grid-cols-1  gap-10 px-4 sm:px-2">
         {europeNews.map((news, index) => (
           <div
             onClick={() => navigate(`/news/${news._id}`)}
             key={index}
-            className="flex flex-col md:flex-row cursor-pointer group gap-2"
+            className="flex flex-col md:flex-row cursor-pointer group gap-10"
           >
-            <div className="w-full h-[250px] md:h-[300px] rounded-md overflow-hidden bg-orange-400">
+            <div className="w-full flex-1  h-[250px] md:h-[400px] rounded-md overflow-hidden bg-orange-400">
               <img
                 src={news?.image}
                 alt={news.title}
                 className="w-full group-hover:scale-105 duration-500 h-full object-cover"
               />
             </div>
-            <div className="flex group-hover:text-red-500 duration-300 justify-center flex-col gap-4">
+            <div className="flex-1   group-hover:text-red-500 duration-300 justify-center flex-col gap-4">
               <p className="font-semibold text-lg">{news?.title}</p>
               <p>{news?.title}</p>
               <p>{news?.date}</p>
@@ -99,7 +99,7 @@ export const EuropeNewsGrid = () => {
 
 const Ads = () => {
   return (
-    <div className="h-[60%] w-full bg-lime-500">
+    <div className="h-[100px] w-full bg-lime-500">
       <p className="font-semibold justify-center flex items-center">
         Ads Banner
       </p>
