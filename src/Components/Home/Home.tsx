@@ -1,5 +1,5 @@
 
-import { EditorsChoice, HomeHero, LastSection, LongAdsBanner, ThirdSection, TopNews } from "./HomeHelp"
+import { EditorsChoice, HomeHero, LastSection,  ThirdSection, TopNews } from "./HomeHelp"
 
 export const HomeComp = () => {
   return (
