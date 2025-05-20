@@ -1,17 +1,16 @@
 {
-  "rewrites": [
-    { 
-      "source": "/(.*)", 
-      "destination": "/" 
-    }
-  ],
   "routes": [
     {
-      "src": "/Ads.txt",
-      "dest": "/Ads.txt",
+      "src": "/ads.txt",
+      "dest": "/ads.txt",
       "headers": {
         "Content-Type": "text/plain"
       }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/",
+      "status": 200
     }
   ]
 }
