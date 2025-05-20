@@ -53,7 +53,7 @@ export const HomeHero = () => {
 
   return (
     <div
-      className="grid grid-cols-1 group cursor-pointer rounded-md md:grid-cols-2 gap-3 items-center h-full md:h-[70vh]"
+      className="grid grid-cols-1 group cursor-pointer mb-8 rounded-md md:grid-cols-2 gap-3 items-center h-full md:h-[70vh]"
       onClick={() => news.length > 0 && handleNavigate(news[0]._id)}
     >
       <div className="md:px-5 flex flex-col gap-3">
@@ -109,7 +109,7 @@ export const TopNews = () => {
   }, []);
 
   return (
-    <div className="md:h-screen w-full gap-4 mx-auto grid grid-cols-1 md:grid-cols-2">
+    <div className="md:h-screen w-full gap-4 mx-auto my-12 md:my-36 grid grid-cols-1 md:grid-cols-2">
       {/* Top Image (Displaying news[1]) */}
       <div
         className="flex group cursor-pointer flex-col shadow-md p-4 gap-4"
@@ -566,7 +566,7 @@ export const LastSection = () => {
     fetchFeaturesNews();
   }, []);
   return (
-    <div className="grid grid-cols-1 gap-4   md:gap-10 sm:grid-cols-2 md:grid-cols-3  md:px-10 my-5 md:mt-20">
+    <div className="grid grid-cols-1 gap-4 md:my-36   md:gap-10 sm:grid-cols-2 md:grid-cols-3  md:px-10 my-5 md:mt-20">
       {/* Business  */}
       <div className="">
         <p className="text-2xl font-semibold my-4">Economy</p>
