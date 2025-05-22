@@ -1,9 +1,9 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { BsArrowRight } from "react-icons/bs";
 import { NavLinks } from "../NavComp/NavFucn";
+import { BsArrowRight } from "react-icons/bs";
 
-// Define NewsTypes for better type safety
+// News type definition
 type NewsTypes = {
   _id: string;
   categoryId: string;
@@ -17,26 +17,23 @@ type NewsTypes = {
   __v: number;
 };
 
-export const FeaturesNewsGrid = () => {
-  const [news, setNews] = useState<NewsTypes[]>([]);
+export const BusinessNewsGrid = () => {
+  const [europeNews, setEuropeNews] = useState<NewsTypes[]>([]);
   const [displayCount, setDisplayCount] = useState(20);
+
   const location = useLocation().pathname;
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchNews = async () => {
       try {
         const response = await fetch(
-          "https://richapi.vercel.app/post-category/Featured"
+          "https://richapi.vercel.app/post-category/Business"
         );
         const data = await response.json();
-
-        if (data.status === "success" && Array.isArray(data.posts)) {
-          setNews(data.posts);
-        } else {
-          console.error("Unexpected data structure:", data);
-        }
+        setEuropeNews(data.posts);
       } catch (error) {
-        console.error("Error fetching news:", error);
+        console.error("Error fetching Lite news:", error);
       }
     };
 
@@ -48,32 +45,35 @@ export const FeaturesNewsGrid = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 gap-3 md:gap-10 sm:grid-cols-[1fr_300px]">
+    <div className="grid grid-cols-1  gap-3 md:gap-10 sm:grid-cols-[1fr_300px]">
       {/* News List Section */}
       <div>
-        <div className="grid grid-cols-1 gap-10 px-4 sm:px-2">
-          {news.slice(0, displayCount).map((item) => (
-            <Link
-              to={`/news/${item._id}`}
-              key={item._id}
-              className="flex flex-col md:flex-row cursor-pointer group gap-2"
+        <div className="grid grid-cols-1  gap-10 px-4 sm:px-2">
+          {europeNews.slice(0, displayCount).map((news, index) => (
+            <div
+              onClick={() => navigate(`/news/${news._id}`)}
+              key={index}
+              className="flex flex-col md:flex-row cursor-pointer group gap-10"
             >
-              <div className="w-full flex-1 h-[250px] md:h-[300px] rounded-md overflow-hidden bg-gray-200">
+              <div className="w-full flex-1  h-[250px] md:h-[400px] rounded-md overflow-hidden bg-orange-400">
                 <img
-                  src={item.image}
-                  alt={item.title}
+                  src={news?.image}
+                  alt={news.title}
                   className="w-full group-hover:scale-105 duration-500 h-full object-cover"
                 />
               </div>
-              <div className="flex flex-1 group-hover:text-red-500 duration-300 justify-center flex-col gap-4">
-                <p className="font-semibold text-lg">{item.title}</p>
-                <p>{item.date}</p>
+              <div className="flex-1   group-hover:text-red-500 duration-300 justify-center flex-col gap-4">
+                <p className="font-semibold text-lg">{news?.title}</p>
+                <p>{news?.title}</p>
+                <p>{news?.date}</p>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
+
         {/* Load More Button */}
-        {news.length > displayCount && (
+
+        {europeNews.length > displayCount && (
           <div className="flex justify-center my-6">
             <button
               onClick={handleLoadMore}
@@ -85,12 +85,13 @@ export const FeaturesNewsGrid = () => {
         )}
       </div>
 
+
       {/* Sidebar Section */}
-      <div className="flex flex-col px-4 gap-5 bg-black py-2 mt-5">
+      <div className="flex flex-col px-4 gap-5 bg-black h-fit py-2 mt-5">
         <p className="font-semibold text-white text-lg">Categories</p>
         <div className="flex flex-col gap-5">
           {NavLinks.map((el) => {
-            const isActive = location === el.to;
+            const isActive = location == el.to;
             return (
               <Link
                 key={el.to}
@@ -113,3 +114,5 @@ export const FeaturesNewsGrid = () => {
     </div>
   );
 };
+
+

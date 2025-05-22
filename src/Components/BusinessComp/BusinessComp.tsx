@@ -1,9 +1,9 @@
-import { EuropeNewsGrid } from "./EuropeHelp"
+import { BusinessNewsGrid } from "./BusinessHelp"
 
-export const EuropeComp = () => {
+export const BusinessComp = () => {
   return (
     <div>
-      <EuropeNewsGrid />
+      <BusinessNewsGrid />
     </div>
   )
 }

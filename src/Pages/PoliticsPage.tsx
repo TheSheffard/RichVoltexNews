@@ -1,9 +1,10 @@
-import { FeaturesComp } from '../Components/FeaturesComp/FeaturesComp'
+import { PoliticsComp } from "../Components/PoliticesCOmp/Politics"
 
-export const FeaturesPage = () => {
+
+export const PoliticsPage = () => {
   return (
     <div>
-        <FeaturesComp/>
+        <PoliticsComp/>
     </div>
   )
 }

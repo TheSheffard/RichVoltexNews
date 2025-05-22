@@ -202,10 +202,7 @@ export const ThirdSection = () => {
     };
 
     fetchNews("https://richapi.vercel.app/post-category/Sports", setSportsNews);
-    fetchNews(
-      "https://richapi.vercel.app/post-category/HomePage",
-      setGeneralNews
-    );
+    fetchNews( "https://richapi.vercel.app/post-category/HomePage", setGeneralNews);
     fetchNews("https://richapi.vercel.app/post-category/Featured", setTechNews);
   }, []);
 

@@ -1,9 +1,9 @@
-import { EuropeComp } from '../Components/BusinessComp/BusinessComp'
+import { BusinessComp } from '../Components/BusinessComp/BusinessComp'
 
-export const EuropePage = () => {
+export const BusinessPage = () => {
   return (
     <div>
-        <EuropeComp/>
+        <BusinessComp/>
     </div>
   )
 }
