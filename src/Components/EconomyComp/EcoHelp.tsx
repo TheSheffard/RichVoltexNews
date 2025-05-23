@@ -26,7 +26,7 @@ export const EconomyNewsGrid = () => {
     const fetchNews = async () => {
       try {
         const response = await fetch(
-          "https://richapi.vercel.app/post-category/Sports"
+          "https://punchscrapper.onrender.com/post/Sports"
         );
         const data = await response.json();
        

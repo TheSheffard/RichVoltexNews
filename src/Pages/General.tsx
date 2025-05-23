@@ -31,7 +31,7 @@ export const GeneralPage = () => {
     const fetchNews = async () => {
       try {
         const response = await fetch(
-          "https://richapi.vercel.app/post-category/HomePage"
+          "https://punchscrapper.onrender.com/post/HomePage"
         );
         const data = await response.json();
         setScienceNews(data.posts);

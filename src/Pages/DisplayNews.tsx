@@ -17,7 +17,7 @@ type NewsType = {
 };
 
 export const NewsDetails = () => {
-    const { id } = useParams(); // Get the news ID from the URL
+    const { id } = useParams();
     const [news, setNews] = useState<NewsType | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -25,20 +25,28 @@ export const NewsDetails = () => {
     useEffect(() => {
         const fetchNewsDetails = async () => {
             try {
-                const response = await fetch(`https://richapi.vercel.app/news/${id}`);
+                const response = await fetch(`https://punchscrapper.onrender.com/news/${id}`);
                 if (!response.ok) throw new Error("Failed to fetch news");
 
                 const data = await response.json();
-                if (Array.isArray(data) && data.length > 0) {
-                    setNews(data[0]); // Extract first item if API returns an array
-                } else if (typeof data === "object" && data !== null) {
-                    setNews(data);
+
+                if (response.ok) {
+                    console.log(data)
+                    if (data) {
+                        setNews(data);
+                    } else {
+                        throw new Error("News not found");
+
+                    }
+
                 } else {
                     throw new Error("Invalid data format");
+
                 }
+
             } catch (error: any) {
                 setError(error.message);
-                console.error("Error fetching news details:", error);
+                console.error("Error fetching news details:", error.message);
             } finally {
                 setLoading(false);
             }
@@ -47,7 +55,7 @@ export const NewsDetails = () => {
         fetchNewsDetails();
     }, [id]);
 
-    if (loading) return <p className="text-center mt-10">Loading news...</p>;
+    if (loading) return <p className="text-center text-xl font-semibold mt-10">Loading please wait...</p>;
     if (error) return <p className="text-center mt-10 text-red-500">{error}</p>;
     if (!news) return <p className="text-center mt-10">News not found.</p>;
 

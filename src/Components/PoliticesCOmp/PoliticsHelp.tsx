@@ -31,7 +31,7 @@ export const PoliticsNewsGrid = () => {
     const fetchNews = async () => {
       try {
         const response = await fetch(
-          "https://richapi.vercel.app/post-category/Politics"
+          "https://punchscrapper.onrender.com/post/Politics"
         );
         const data = await response.json();
         console.log(data)

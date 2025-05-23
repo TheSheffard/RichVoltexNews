@@ -26,7 +26,7 @@ export const FeaturesNewsGrid = () => {
     const fetchNews = async () => {
       try {
         const response = await fetch(
-          "https://richapi.vercel.app/post-category/Featured"
+          "https://punchscrapper.onrender.com/post/Featured"
         );
         const data = await response.json();
 

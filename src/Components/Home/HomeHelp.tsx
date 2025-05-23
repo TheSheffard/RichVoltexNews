@@ -34,10 +34,21 @@ export const HomeHero = () => {
     const fetchTodayNews = async () => {
       try {
         const response = await fetch(
-          "https://richapi.vercel.app/post-category/HomePage"
+          "https://punchscrapper.onrender.com/post/HomePage"
         );
         const data = await response.json();
-        setNews(data.posts);
+        console.log(data)
+
+        if (response.ok) {
+          if (data) {
+            setNews(data.newsItem);
+
+          }
+        } else {
+          throw new Error("Error occurred");
+
+        }
+
       } catch (error: any) {
         console.error("Error fetching news:", error.message);
       }
@@ -54,7 +65,7 @@ export const HomeHero = () => {
   return (
     <div
       className="grid grid-cols-1 group cursor-pointer mb-8 rounded-md md:grid-cols-2 gap-3 items-center h-full md:h-[70vh]"
-      onClick={() => news.length > 0 && handleNavigate(news[0]._id)}
+      onClick={() => news?.length > 0 && handleNavigate(news[0]._id)}
     >
       <div className="md:px-5 flex flex-col gap-3">
         {news.length > 0 && (
@@ -90,13 +101,13 @@ export const HomeHero = () => {
 
 export const TopNews = () => {
   const [news, setNews] = useState<NewsTypes[]>([]);
-  const navigate = useNavigate(); // Initialize navigation
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const fetchTodayNews = async () => {
       try {
         const response = await fetch(
-          "https://richapi.vercel.app/post-category/News"
+          "https://punchscrapper.onrender.com/post/News"
         );
         const data = await response.json();
         setNews(data.posts);
@@ -138,44 +149,44 @@ export const TopNews = () => {
       <div className="grid grid-cols-2 gap-3 md:gap-5 p-2">
         {Array.isArray(news) && news.length > 2
           ? news.slice(2, 6).map((item: any, index: number) => (
-              <div
-                key={index}
-                className="h-full  cursor-pointer group flex flex-col"
-                onClick={() => navigate(`/news/${item._id}`)} // Navigate on click
-              >
-                <div className="flex-1 bg-lime-500 max-h-[300px] group rounded-md overflow-hidden">
-                  <img
-                    src={item.image}
-                    className="h-full group-hover:scale-105 duration-500 w-full object-cover"
-                    alt={item.title}
-                  />
+            <div
+              key={index}
+              className="h-full  cursor-pointer group flex flex-col"
+              onClick={() => navigate(`/news/${item._id}`)} // Navigate on click
+            >
+              <div className="flex-1 bg-lime-500 max-h-[300px] group rounded-md overflow-hidden">
+                <img
+                  src={item.image}
+                  className="h-full group-hover:scale-105 duration-500 w-full object-cover"
+                  alt={item.title}
+                />
+              </div>
+              <p className="mt-2 font-semibold text-gray-500">
+                {item.date || "Unknown Date"}
+              </p>
+              <p className="text-sm font-semibold group-hover:text-red-500 duration-300">
+                {item.title}
+              </p>
+            </div>
+          ))
+          : // Show skeleton placeholders while loading
+          Array(4)
+            .fill(0)
+            .map((_, index) => (
+              <div key={index} className="h-full group flex flex-col">
+                <div className="flex-1 bg-gray-300 min-h-40 group rounded-md overflow-hidden">
+                  <Skeleton className="w-full h-full" />
                 </div>
                 <p className="mt-2 font-semibold text-gray-500">
-                  {item.date || "Unknown Date"}
+                  {" "}
+                  <Skeleton className="h-full w-full" />
                 </p>
-                <p className="text-sm font-semibold group-hover:text-red-500 duration-300">
-                  {item.title}
+                <p className="text-sm font-semibold">
+                  {" "}
+                  <Skeleton className="h-full w-full" />
                 </p>
               </div>
-            ))
-          : // Show skeleton placeholders while loading
-            Array(4)
-              .fill(0)
-              .map((_, index) => (
-                <div key={index} className="h-full group flex flex-col">
-                  <div className="flex-1 bg-gray-300 min-h-40 group rounded-md overflow-hidden">
-                    <Skeleton className="w-full h-full" />
-                  </div>
-                  <p className="mt-2 font-semibold text-gray-500">
-                    {" "}
-                    <Skeleton className="h-full w-full" />
-                  </p>
-                  <p className="text-sm font-semibold">
-                    {" "}
-                    <Skeleton className="h-full w-full" />
-                  </p>
-                </div>
-              ))}
+            ))}
       </div>
     </div>
   );
@@ -201,9 +212,9 @@ export const ThirdSection = () => {
       }
     };
 
-    fetchNews("https://richapi.vercel.app/post-category/Sports", setSportsNews);
-    fetchNews( "https://richapi.vercel.app/post-category/HomePage", setGeneralNews);
-    fetchNews("https://richapi.vercel.app/post-category/Featured", setTechNews);
+    fetchNews("https://punchscrapper.onrender.com/post/Sports", setSportsNews);
+    fetchNews("https://punchscrapper.onrender.com/post/HomePage", setGeneralNews);
+    fetchNews("https://punchscrapper.onrender.com/post/Featured", setTechNews);
   }, []);
 
   return (
@@ -442,7 +453,7 @@ export const EditorsChoice = () => {
     const fetchWarNews = async () => {
       try {
         const response = await fetch(
-          "https://richapi.vercel.app/post/2ab36b15-fdf4-4a88-b05f-b6d96c71cabf"
+          "https://punchscrapper.onrender.com/post/News"
         );
         const data = await response.json();
         setWarNews(data);
@@ -527,7 +538,7 @@ export const LastSection = () => {
     const fetchEconomyNews = async () => {
       try {
         const response = await fetch(
-          "https://richapi.vercel.app/post/f7ca96e7-3246-41b9-ad21-ad70w4534346"
+          "https://punchscrapper.onrender.com/post/Business"
         );
         const data = await response.json();
         setEconomyNews(data);
@@ -538,7 +549,7 @@ export const LastSection = () => {
     const fetchEuropeNews = async () => {
       try {
         const response = await fetch(
-          "https://richapi.vercel.app/post/f7ca96e7-958a-41b9-ad21-ad7059396286"
+          "https://punchscrapper.onrender.com/post/Politics"
         );
         const data = await response.json();
         setEuropeNews(data);
@@ -549,7 +560,7 @@ export const LastSection = () => {
     const fetchFeaturesNews = async () => {
       try {
         const response = await fetch(
-          "https://richapi.vercel.app/post/f7ca96e7-958a-41b9-ad21-ad7059588290"
+          "https://punchscrapper.onrender.com/post/Featured"
         );
         const data = await response.json();
         setFeaturesNews(data);

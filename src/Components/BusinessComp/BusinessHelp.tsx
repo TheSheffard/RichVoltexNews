@@ -28,7 +28,7 @@ export const BusinessNewsGrid = () => {
     const fetchNews = async () => {
       try {
         const response = await fetch(
-          "https://richapi.vercel.app/post-category/Business"
+          "https://punchscrapper.onrender.com/post/Business"
         );
         const data = await response.json();
         setEuropeNews(data.posts);
