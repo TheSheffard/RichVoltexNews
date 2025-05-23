@@ -31,7 +31,7 @@ export const BusinessNewsGrid = () => {
           "https://punchscrapper.onrender.com/post/Business"
         );
         const data = await response.json();
-        setEuropeNews(data.posts);
+        setEuropeNews(data.newsItem);
       } catch (error) {
         console.error("Error fetching Lite news:", error);
       }

@@ -18,7 +18,7 @@ type NewsTypes = {
 
 export const EconomyNewsGrid = () => {
   const [economyNews, setEconomyNews] = useState<NewsTypes[]>([]);
-  const [displayCount, setDisplayCount] = useState(20); 
+  const [displayCount, setDisplayCount] = useState(20);
   const location = useLocation().pathname;
   const navigate = useNavigate();
 
@@ -29,9 +29,10 @@ export const EconomyNewsGrid = () => {
           "https://punchscrapper.onrender.com/post/Sports"
         );
         const data = await response.json();
-       
-        if (Array.isArray(data.posts)) {
-          setEconomyNews(data.posts);
+        console.log(data)
+
+        if (data) {
+          setEconomyNews(data.newsItem);
         } else {
           console.error("Unexpected data structure:", data);
         }
@@ -44,7 +45,7 @@ export const EconomyNewsGrid = () => {
   }, []);
 
   const handleLoadMore = () => {
-    setDisplayCount(prevCount => prevCount + 40); 
+    setDisplayCount(prevCount => prevCount + 40);
   };
 
   return (

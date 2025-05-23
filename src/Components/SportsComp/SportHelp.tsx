@@ -28,7 +28,7 @@ export const SportsNewsGrid = () => {
           "https://punchscrapper.onrender.com/post/Sports"
         );
         const data = await response.json();
-        setNews(data.posts);
+        setNews(data.newsItem);
       } catch (error) {
         console.error("Error fetching science news:", error);
       }

@@ -34,7 +34,7 @@ export const GeneralPage = () => {
           "https://punchscrapper.onrender.com/post/HomePage"
         );
         const data = await response.json();
-        setScienceNews(data.posts);
+        setScienceNews(data.newsItem);
       } catch (error) {
         console.error("Error fetching science news:", error);
       } finally {

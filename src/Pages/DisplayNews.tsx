@@ -33,7 +33,7 @@ export const NewsDetails = () => {
                 if (response.ok) {
                     console.log(data)
                     if (data) {
-                        setNews(data);
+                        setNews(data.newsItem);
                     } else {
                         throw new Error("News not found");
 

@@ -34,9 +34,8 @@ export const PoliticsNewsGrid = () => {
           "https://punchscrapper.onrender.com/post/Politics"
         );
         const data = await response.json();
-        console.log(data)
-        if (data.status === "success" && Array.isArray(data.posts)) {
-          setScienceNews(data.posts);
+        if (data.status === "success") {
+          setScienceNews(data.newsItem);
 
         } else {
           console.error("Unexpected data structure:", data);

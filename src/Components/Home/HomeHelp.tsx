@@ -37,7 +37,6 @@ export const HomeHero = () => {
           "https://punchscrapper.onrender.com/post/HomePage"
         );
         const data = await response.json();
-        console.log(data)
 
         if (response.ok) {
           if (data) {
@@ -110,7 +109,7 @@ export const TopNews = () => {
           "https://punchscrapper.onrender.com/post/News"
         );
         const data = await response.json();
-        setNews(data.posts);
+        setNews(data.newsItem);
       } catch (error: any) {
         console.error("Error fetching news:", error.message);
       }
@@ -206,7 +205,11 @@ export const ThirdSection = () => {
       try {
         const response = await fetch(url);
         const data = await response.json();
-        setter(data.posts);
+
+
+
+
+        setter(data.newsItem);
       } catch (error) {
         console.error("Error fetching news:", error);
       }
@@ -456,7 +459,7 @@ export const EditorsChoice = () => {
           "https://punchscrapper.onrender.com/post/News"
         );
         const data = await response.json();
-        setWarNews(data);
+        setWarNews(data.newsItem);
       } catch (error) {
         console.error("Error fetching sports news:", error);
       }
@@ -541,7 +544,7 @@ export const LastSection = () => {
           "https://punchscrapper.onrender.com/post/Business"
         );
         const data = await response.json();
-        setEconomyNews(data);
+        setEconomyNews(data.newsItem);
       } catch (error) {
         console.error("Error fetching sports news:", error);
       }
@@ -552,7 +555,7 @@ export const LastSection = () => {
           "https://punchscrapper.onrender.com/post/Politics"
         );
         const data = await response.json();
-        setEuropeNews(data);
+        setEuropeNews(data.newsItem);
       } catch (error) {
         console.error("Error fetching sports news:", error);
       }
@@ -563,7 +566,7 @@ export const LastSection = () => {
           "https://punchscrapper.onrender.com/post/Featured"
         );
         const data = await response.json();
-        setFeaturesNews(data);
+        setFeaturesNews(data.newsItem);
       } catch (error) {
         console.error("Error fetching sports news:", error);
       }
