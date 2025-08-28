@@ -28,7 +28,7 @@ export const BusinessNewsGrid = () => {
     const fetchNews = async () => {
       try {
         const response = await fetch(
-          "https://punchscrapper.onrender.com/post/Business"
+          "http://localhost:5000/post-category/Business"
         );
         const data = await response.json();
         setEuropeNews(data.newsItem);

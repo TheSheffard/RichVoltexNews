@@ -67,13 +67,13 @@ export const HomeHero = () => {
       onClick={() => news?.length > 0 && handleNavigate(news[0]._id)}
     >
       <div className="md:px-5 flex flex-col gap-3">
-        {news.length > 0 && (
+        {news?.length > 0 && (
           <h1 className="bg-indigo-900 w-fit rounded text-white py-1 px-3 text-sm">
             News
           </h1>
         )}
         <p className="text-xl md:text-3xl font-semibold group-hover:text-red-500 duration-300">
-          {news.length > 0 ? news[0].title : <Skeleton />}
+          {news?.length > 0 ? news[0].title : <Skeleton />}
         </p>
         <p className="font-semibold text-base group-hover:text-red-500 duration-300">
           {news.length > 0 ? (
@@ -308,7 +308,7 @@ export const ThirdSection = () => {
                 navigate(`/news/${generalNews[1]._id}`)
               }
             >
-              {generalNews.length > 0 ? (
+              {generalNews?.length > 0 ? (
                 <img
                   src={generalNews[1].image}
                   className="h-full group-hover:scale-105 duration-500 w-full object-cover"
@@ -320,14 +320,14 @@ export const ThirdSection = () => {
             </div>
 
             <p className="mt-2 text-sm font-semibold">
-              {generalNews.length > 0 ? (
+              {generalNews?.length > 0 ? (
                 generalNews[1]?.date
               ) : (
                 <Skeleton className="w-fit h-full" />
               )}
             </p>
             <p className="group-hover:text-red-500 duration-300 font-semibold">
-              {generalNews.length > 0 ? (
+              {generalNews?.length > 0 ? (
                 generalNews[1]?.title
               ) : (
                 <Skeleton className="w-full h-full" />
