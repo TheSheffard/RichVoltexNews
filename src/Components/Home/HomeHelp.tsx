@@ -5,13 +5,7 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useNavigate } from "react-router-dom";
 
-export const LongAdsBanner = () => {
-  return (
-    <p className="text-center py-16  border my-10 font-bold text-lg bg-lime-400">
-      Ads Banner
-    </p>
-  );
-};
+
 
 type NewsTypes = {
   _id: string;
@@ -34,12 +28,13 @@ export const HomeHero = () => {
     const fetchTodayNews = async () => {
       try {
         const response = await fetch(
-          "https://punchscrapper.onrender.com/post/HomePage"
+          "https://punchscrapper.onrender.com/post/Lite"
         );
         const data = await response.json();
 
         if (response.ok) {
           if (data) {
+            console.log(data)
             setNews(data.newsItem);
 
           }
@@ -56,7 +51,6 @@ export const HomeHero = () => {
     fetchTodayNews();
   }, []);
 
-  // Click handler to navigate to news details page
   const handleNavigate = (id: string) => {
     navigate(`/news/${id}`);
   };
@@ -76,7 +70,7 @@ export const HomeHero = () => {
           {news?.length > 0 ? news[0].title : <Skeleton />}
         </p>
         <p className="font-semibold text-base group-hover:text-red-500 duration-300">
-          {news.length > 0 ? (
+          {news?.length > 0 ? (
             news[0].content.slice(0, 200) + "...."
           ) : (
             <Skeleton count={2} className="h-full w-full" />
@@ -216,7 +210,7 @@ export const ThirdSection = () => {
     };
 
     fetchNews("https://punchscrapper.onrender.com/post/Sports", setSportsNews);
-    fetchNews("https://punchscrapper.onrender.com/post/HomePage", setGeneralNews);
+    fetchNews("https://punchscrapper.onrender.com/post/Lite", setGeneralNews);
     fetchNews("https://punchscrapper.onrender.com/post/Featured", setTechNews);
   }, []);
 

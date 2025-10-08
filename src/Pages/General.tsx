@@ -31,7 +31,7 @@ export const GeneralPage = () => {
     const fetchNews = async () => {
       try {
         const response = await fetch(
-          "https://punchscrapper.onrender.com/post/HomePage"
+          "https://punchscrapper.onrender.com/post/Lite"
         );
         const data = await response.json();
         setScienceNews(data.newsItem);

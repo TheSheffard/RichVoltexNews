@@ -8,7 +8,7 @@ type NewsType = {
     link: string;
     desc: string;
     image: string;
-    secImage?: string; // Optional secondary image
+    secImage?: string;
     date: string;
     content: string;
     createdAt: string;
@@ -23,17 +23,15 @@ export const NewsDetails = () => {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        console.log(id)
         const fetchNewsDetails = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/news/${id}`);
+                const response = await fetch(`https://punchscrapper.onrender.com/news/${id}`);
                 if (!response.ok) throw new Error("Failed to fetch news");
 
                 const data = await response.json();
 
                 if (response.ok) {
                     if (data) {
-                        console.log(data)
                         setNews(data.newsItem);
                     } else {
                         throw new Error("News not found");

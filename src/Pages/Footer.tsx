@@ -41,7 +41,6 @@ export const Footer = () => {
 
             {/* Copyright Section */}
             <div className="text-center mt-8 border-t gap-2 flex flex-col border-gray-700 pt-4 text-gray-400 text-sm">
-                <p>Developed  by <span className="text-white">Rich dot com</span></p>
                 <p>Copyright © {new Date().getFullYear()} Punch 9ja. All rights reserved.</p>
             </div>
         </footer>
