@@ -28,7 +28,7 @@ export const SearchBar = () => {
       );
 
       const data = await response.json();
-      console.log(data)
+      console.log(data);
 
       if (response.ok && data.status === "success") {
         setSearchResults(data.newsItems || []);
@@ -55,7 +55,6 @@ export const SearchBar = () => {
   return (
     <div className="bg-white border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        {/* Search Input */}
         <form onSubmit={handleSearch} className="flex gap-2">
           <div className="flex-1 relative">
             <input
@@ -85,7 +84,6 @@ export const SearchBar = () => {
           )}
         </form>
 
-        {/* Search Results */}
         {hasSearched && (
           <div className="mt-6">
             {isSearching ? (
@@ -135,4 +133,3 @@ export const SearchBar = () => {
     </div>
   );
 };
-

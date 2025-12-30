@@ -1,4 +1,5 @@
 
+import AdSense from "../AdSense"
 import { SearchBar } from "../SearchComp/SearchComp"
 import { EditorsChoice, HomeHero, LastSection, ThirdSection, TopNews } from "./HomeHelp"
 
@@ -8,10 +9,11 @@ export const HomeComp = () => {
 
       <SearchBar />
 
+      <AdSense adSlot="3891595190" />
       <HomeHero />
 
       <TopNews />
-
+      <AdSense adSlot="8802619130" />
       <ThirdSection />
 
       <EditorsChoice />
