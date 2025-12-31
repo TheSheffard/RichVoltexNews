@@ -1,9 +1,13 @@
-import {  SportsNewsGrid } from "./SportHelp"
+import AdSense from "../AdSense"
+import { SportsNewsGrid } from "./SportHelp"
 
 export const Sport = () => {
   return (
     <div>
-        <SportsNewsGrid/>
+      <AdSense adSlot="3891595190" />
+      <SportsNewsGrid />
+      <AdSense adSlot="3891595190" />
+
     </div>
   )
 }

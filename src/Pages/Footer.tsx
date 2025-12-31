@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 import { NavLinks } from "../Components/NavComp/NavFucn";
+import AdSense from "../Components/AdSense";
 
 
 export const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-16">
+      <AdSense adSlot="3891595190" />
+
       <div className="max-w-7xl mx-auto px-4">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
@@ -137,6 +140,8 @@ export const Footer = () => {
           </div>
         </div>
       </div>
+      <AdSense adSlot="3891595190" />
+
     </footer>
   );
 };
