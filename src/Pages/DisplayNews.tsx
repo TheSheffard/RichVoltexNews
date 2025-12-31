@@ -64,13 +64,10 @@ export const NewsDetails = () => {
             <AdSense adSlot="3891595190" />
 
             {news.image && <img src={news.image} alt={news.title} className="w-full h-fit object-cover rounded-md" />}
-            <AdSense adSlot="3891595190" />
 
             <h1 className="text-3xl font-bold mt-4">{news.title}</h1>
-            <AdSense adSlot="3891595190" />
 
             <p className="text-sm text-gray-500">{news.date}</p>
-            <AdSense adSlot="3891595190" />
 
             <p className="mt-4 text-gray-700">{news.content}</p>
             <AdSense adSlot="3891595190" />

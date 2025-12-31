@@ -6,7 +6,6 @@ import AdSense from "../Components/AdSense";
 export const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-16">
-      <AdSense adSlot="3891595190" />
 
       <div className="max-w-7xl mx-auto px-4">
         {/* Main Footer Content */}
