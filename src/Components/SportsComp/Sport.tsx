@@ -6,7 +6,6 @@ export const Sport = () => {
     <div>
       <AdSense adSlot="3891595190" />
       <SportsNewsGrid />
-      <AdSense adSlot="3891595190" />
 
     </div>
   )

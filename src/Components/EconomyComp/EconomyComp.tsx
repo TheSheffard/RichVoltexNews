@@ -8,8 +8,6 @@ export const EconomyComp = () => {
       <AdSense adSlot="3891595190" />
 
         <EconomyNewsGrid/>
-      <AdSense adSlot="3891595190" />
-
     </div>
   )
 }

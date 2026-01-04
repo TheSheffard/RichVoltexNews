@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { NavLinks } from "../Components/NavComp/NavFucn";
-import AdSense from "../Components/AdSense";
 
 
 export const Footer = () => {
@@ -139,7 +138,6 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      <AdSense adSlot="3891595190" />
 
     </footer>
   );

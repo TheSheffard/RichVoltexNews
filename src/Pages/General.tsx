@@ -102,7 +102,6 @@ export const GeneralPage = () => {
               </div>
             ))}
         </div>
-      <AdSense adSlot="3891595190" />
 
         {/* Load More Button */}
 

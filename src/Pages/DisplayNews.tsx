@@ -70,7 +70,6 @@ export const NewsDetails = () => {
             <p className="text-sm text-gray-500">{news.date}</p>
 
             <p className="mt-4 text-gray-700">{news.content}</p>
-            <AdSense adSlot="3891595190" />
 
 
         </div>
