@@ -6,6 +6,8 @@ export const PoliticsComp = () => {
     <div>
       <AdSense adSlot="3891595190" />
       <PoliticsNewsGrid />
+      <AdSense adSlot="3891595190" />
+
     </div>
   )
 }

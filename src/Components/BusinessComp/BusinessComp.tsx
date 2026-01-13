@@ -7,6 +7,7 @@ export const BusinessComp = () => {
       <AdSense adSlot="3891595190" />
 
       <BusinessNewsGrid />
+      <AdSense adSlot="3891595190" />
 
     </div>
   )

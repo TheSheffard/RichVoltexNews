@@ -13,12 +13,16 @@ export const HomeComp = () => {
       <HomeHero />
 
       <TopNews />
+      <AdSense adSlot="3891595190" />
 
       <ThirdSection />
+      <AdSense adSlot="3891595190" />
 
       <EditorsChoice />
 
       <LastSection />
+      <AdSense adSlot="3891595190" />
+
 
     </div>
   )
